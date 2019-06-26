@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  .row.banner
+    .col-12
+      h1= `Up ${pageHeader.title}`
+        small &nbsp; #{pageHeader.strapline}
+
+  .row
+    .col-12.col-md-8
+      each location in locations
+        .card
+          .card-block
+            h4 
+              a(href="/location") !{location.name}
+              small &nbsp;
+                - for (let i = 1;i<= location.rating; i++)
+                  i.fas.fa-star
+                - for (let i = location.rating; i < 5; i++)
+                  i.fas.fa-star
+              span.badge.badge-pill.badge-default.float-right= location.distance
+            p.adress=location.address
+            .facilities
+              span.badge.badge-warning = facility
+            h4 #{location.rating}
+            h4 #{location.facilities}
