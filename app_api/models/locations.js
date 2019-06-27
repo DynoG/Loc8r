@@ -11,6 +11,6 @@ const locationSchema = new mongoose.Schema({
     address:String,
     facilities:[String]
 
- });
+ },{versionKey: false});
 
 module.exports = mongoose.model('Location', locationSchema);
