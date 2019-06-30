@@ -1,7 +1,7 @@
 <div class="card" *ngFor="let location of locations">
     <div class="card-blocationk">
         <h4>
-            <a href="/location/{{location._id}}">{{location.name}}</a>
+            <a routerLink="/location/{{location._id}}">{{location.name}}</a>
             <small>&nbsp;
             <i class="{{ location.rating < 1 ? 'far' : 'fas' }} fa-star"></i>
             <i class="{{ location.rating < 2 ? 'far' : 'fas' }} fa-star"></i>
@@ -9,7 +9,7 @@
             <i class="{{ location.rating < 4 ? 'far' : 'fas' }} fa-star"></i>
             <i class="{{ location.rating < 5 ? 'far' : 'fas' }} fa-star"></i>
             </small>
-            <span class="badge badge-pill badge-default float-right">{{location.rating}} Stars</span>
+            <span class="badge badge-pill badge-default float-right" >{{location.rating}} Stars</span>
         </h4>
         <p class="address">{{location.address | uppercase}}</p>
         <div class="facilities">

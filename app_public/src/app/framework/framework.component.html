@@ -1,0 +1,21 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button type="button" data-toggle="collapse" data-target="#navbarMain" class="navbar-toggler navbar-toggler-right">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a routerLink="" class="navbar-brand">Home</a>
+        <div id="navbarMain" class="navbar-collapse collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item" routerLinkActive="active">
+                <a routerLink="about" routerLinkActive="active" class="nav-link">About </a>
+                </li>
+            </ul>
+        </div>
+      </nav>
+      <div class="container">
+          <router-outlet></router-outlet>
+        <footer>
+          <div class="row">
+            <div class="col-12"><small>&copy;Aretc-Int 2019</small></div>
+          </div>
+        </footer>
+      </div>
