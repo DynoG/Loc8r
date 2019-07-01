@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Loc8rDataService } from '../loc8r-data.service';
+import { ActivatedRoute } from '@angular/router';
 
 export class Locations {
 
-  _id:String;
-  name:String;
-  address:String;
+  _id:string;
+  name:string;
+  address:string;
   rating:number;
-  facilities:String[];
+  facilities:string[];
 
 }
 
@@ -18,7 +19,9 @@ export class Locations {
 })
 export class HomeListComponent implements OnInit {
 
-  constructor(private dataservice: Loc8rDataService) { }
+  constructor(
+    private route: ActivatedRoute,
+    private dataservice: Loc8rDataService) { }
   // locations : Locations []= [{
   //   _id:'590d8dc7a7cb5b8e3f1bfc48',
   //   name:'The Costy',

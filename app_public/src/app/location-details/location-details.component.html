@@ -1,1 +1,16 @@
-<p>location-details works!</p>
+<div class="row">
+        
+    <div class="col-12 col-md-6">
+            <p>{{ location.address }}</p><small>&nbsp;
+                <i class="{{ location.rating < 1 ? 'far' : 'fas' }} fa-star"></i>
+                <i class="{{ location.rating < 2 ? 'far' : 'fas' }} fa-star"></i>
+                <i class="{{ location.rating < 3 ? 'far' : 'fas' }} fa-star"></i>
+                <i class="{{ location.rating < 4 ? 'far' : 'fas' }} fa-star"></i>
+                <i class="{{ location.rating < 5 ? 'far' : 'fas' }} fa-star"></i>
+        </small>
+        <div class="facilities">
+            <span *ngFor="let facility of location.facilities" class="badge badge-warning">{{facility}}</span>
+        </div>        
+    </div>
+</div>
+

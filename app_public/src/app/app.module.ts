@@ -29,6 +29,7 @@ import { DetailsPageComponent } from './details-page/details-page.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    // Defined Routes ...
     RouterModule.forRoot([
       {
         path:'',

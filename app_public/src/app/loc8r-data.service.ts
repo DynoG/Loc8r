@@ -11,6 +11,7 @@ export class Loc8rDataService {
   constructor(private http:HttpClient) { }
   private apiBaseUrl = 'http://localhost:3000/api';
 
+  // Data Providers (Controllers)
   public getLocations(): Promise<Locations[]> {
 
     const url: string = `${this.apiBaseUrl}/locations`;

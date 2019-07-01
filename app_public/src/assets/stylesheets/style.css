@@ -147,11 +147,11 @@ body{
     margin-right: 1rem;
   }
   
-  .badge-default, .btn-primary {
-    background-color: #ad1d28 !important;
-    border-color: #ad1d28 !important;
-    margin: 4px 4px 4px 4px !important;
-    border-radius: 0%;
+  .badge-default, .btn-outline-light {
+    background-color: #469ea8 !important;
+    border-color: #f7f7f7 !important;
+    margin: -16px 2px 4px 1px !important;
+    border-radius: 4%;
     color: white !important;
   }
   

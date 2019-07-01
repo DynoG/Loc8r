@@ -9,11 +9,12 @@
             <i class="{{ location.rating < 4 ? 'far' : 'fas' }} fa-star"></i>
             <i class="{{ location.rating < 5 ? 'far' : 'fas' }} fa-star"></i>
             </small>
-            <span class="badge badge-pill badge-default float-right" >{{location.rating}} Stars</span>
         </h4>
         <p class="address">{{location.address | uppercase}}</p>
         <div class="facilities">
             <span *ngFor="let facility of location.facilities" class="badge badge-warning">{{facility}}</span>
+            <button class="btn btn-outline-light float-right">Edit</button>
+            <button class="btn btn-outline-light float-right">Delete</button>
         </div>
-    </div>
+        
 </div>
