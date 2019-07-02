@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const dbURI = 'mongodb://localhost/loc8r-db';
+const dbURI = 'mongodb://localhost/db_one';
 
 mongoose.connect(dbURI, {useNewUrlParser: true});
 

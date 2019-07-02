@@ -32,6 +32,15 @@ export class Loc8rDataService {
 
   }
 
+  public AddLocation(FormData:any):Promise<any> {
+    const url: string = `${this.apiBaseUrl}/locations/`;
+    return this.http
+      .post(url, FormData)
+      .toPromise()
+      .then(response => response as any)
+      .catch(this.ErrHandler);
+  }
+  
   private ErrHandler(err:any): Promise<any> {
 
     console.log('Something went wrong', err);

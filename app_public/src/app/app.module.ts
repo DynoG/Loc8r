@@ -1,7 +1,9 @@
+// ng Functionalities
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 // import { AppComponent } from './app.component';
 import { HomeListComponent } from './home-list/home-list.component';
@@ -12,6 +14,7 @@ import { PageHeaderComponent } from './page-header/page-header.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { LocationDetailsComponent } from './location-details/location-details.component';
 import { DetailsPageComponent } from './details-page/details-page.component';
+import { NewlocationComponent } from './newlocation/newlocation.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +26,16 @@ import { DetailsPageComponent } from './details-page/details-page.component';
     PageHeaderComponent,
     SidebarComponent,
     LocationDetailsComponent,
-    DetailsPageComponent
+    DetailsPageComponent,
+    NewlocationComponent
 
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    
     // Defined Routes ...
     RouterModule.forRoot([
       {
@@ -42,6 +49,10 @@ import { DetailsPageComponent } from './details-page/details-page.component';
       {
         path: 'location/:locationId',
         component: DetailsPageComponent
+      },
+      {
+        path: 'location',
+        component: NewlocationComponent
       }
     ])
   ],

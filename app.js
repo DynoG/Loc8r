@@ -35,13 +35,12 @@ app.use('/api', (req, res, next) => {
   });
 // Use Routes From API and SERVR APP ...
 app.use('/api', apirouter);
-app.use('/', webrouter);
 
 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found Yet');
+  var err = new Error('ERR : Not Found');
   err.status = 404;
   next(err);
 });

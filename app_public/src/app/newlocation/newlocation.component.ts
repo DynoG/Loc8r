@@ -2,14 +2,14 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Locations } from '../home-list/home-list.component';
 
 @Component({
-  selector: 'app-location-details',
-  templateUrl: './location-details.component.html',
-  styleUrls: ['./location-details.component.css']
+  selector: 'app-newlocation',
+  templateUrl: './newlocation.component.html',
+  styleUrls: ['./newlocation.component.css']
 })
-export class LocationDetailsComponent implements OnInit {
+export class NewlocationComponent implements OnInit {
 
-  @Input() location: Locations;
-  public loc = new Locations;
+  @Input()
+  locations:Locations;
   constructor() { }
 
   ngOnInit() {
@@ -32,3 +32,4 @@ export class LocationDetailsComponent implements OnInit {
     };
 
 }
+

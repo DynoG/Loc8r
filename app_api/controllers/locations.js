@@ -1,12 +1,14 @@
 const mongoose = require('mongoose');
-const mod = mongoose.model('Location');
+const mod = mongoose.model('Locations');
 mongoose.set('useFindAndModify', false);
 
 
 // Location Controllers ...
 const AllLoctions = (req, res) =>{
-    mod
-        .find({}, (err, location) =>{
+    mod.find({}, (err, location) =>{
+            if (err) {
+                res.status(400).json(err)
+            }
             res.json(location);
         }) 
 
@@ -17,7 +19,8 @@ const CreateLocation = (req, res) =>{
         .create({
             name:req.body.name,
             address:req.body.address,
-            facilities:req.body.facilities
+            facilities:req.body.facilities,
+            // review:req.body.review
         }, (err, location) => {
                 if (err) {
                     res
@@ -65,6 +68,7 @@ const UpdateLocation = (req, res) =>{
             location.name = req.body.name;
             location.address = req.body.address;
             location.facilities = req.body.facilities;
+            // location.review = req.body.review;
             location.save((err, mod) => {
                 if (err) {
                     res

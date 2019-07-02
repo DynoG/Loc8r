@@ -1,20 +1,29 @@
-<div class="card" *ngFor="let location of locations">
-    <div class="card-blocationk">
-        <h4>
-            <a routerLink="/location/{{location._id}}">{{location.name}}</a>
-            <small>&nbsp;
-            <i class="{{ location.rating < 1 ? 'far' : 'fas' }} fa-star"></i>
-            <i class="{{ location.rating < 2 ? 'far' : 'fas' }} fa-star"></i>
-            <i class="{{ location.rating < 3 ? 'far' : 'fas' }} fa-star"></i>
-            <i class="{{ location.rating < 4 ? 'far' : 'fas' }} fa-star"></i>
-            <i class="{{ location.rating < 5 ? 'far' : 'fas' }} fa-star"></i>
-            </small>
-        </h4>
-        <p class="address">{{location.address | uppercase}}</p>
-        <div class="facilities">
-            <span *ngFor="let facility of location.facilities" class="badge badge-warning">{{facility}}</span>
-            <button class="btn btn-outline-light float-right">Edit</button>
-            <button class="btn btn-outline-light float-right">Delete</button>
-        </div>
-        
+<div class="card">
+    
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Address</th>
+            <th scope="col">Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let location of locations">
+            <td><a routerLink="/location/{{location._id}}">{{location.name}}</a></td>
+            <td>{{location.address}}</td>
+            <td>
+                <small>&nbsp;
+                    <i class="{{ location.rating < 1 ? 'far' : 'fas' }} fa-star"></i>
+                    <i class="{{ location.rating < 2 ? 'far' : 'fas' }} fa-star"></i>
+                    <i class="{{ location.rating < 3 ? 'far' : 'fas' }} fa-star"></i>
+                    <i class="{{ location.rating < 4 ? 'far' : 'fas' }} fa-star"></i>
+                    <i class="{{ location.rating < 5 ? 'far' : 'fas' }} fa-star"></i>
+                </small>
+                <button class="btn btn-outline-light float-right">Edit</button>
+                <button class="btn btn-outline-light float-right">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 </div>

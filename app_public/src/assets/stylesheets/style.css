@@ -34,6 +34,11 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 small {
   color: rgb(22, 21, 21);
+  font-size: 60%;
+}
+
+h4 small {
+  font-size: 40%;
 }
 
 .card {
@@ -63,9 +68,9 @@ h1 small {
   margin-right: 1rem;
 }
 
-.badge-default, .btn-primary {
-  background-color:hsla(14, 100%, 53%, 0.6);;
-  border-color: #911821;
+.badge-default, .btn-outline-danger {
+  margin: 0px 74px 15px 8px;
+
 }
 
 h4 a, h4 a:hover {
@@ -77,8 +82,9 @@ h4 small {
   line-height: 200%;
   color: #aaa;
 }
+
 small {
-  color: black !important;
+  color:#ad1d28 !important;
 }
 
 .address {
@@ -92,7 +98,7 @@ small {
 
 body{
     font-family: "Cabin", Arial, sans-serif;
-    color: black;
+    color:#861515;
     background-color: #e0e5e6;
   }
   
@@ -117,11 +123,11 @@ body{
   }
   
   h1 small {
-    color: #aaa;
+    color: rgb(207, 74, 74);
   }
   
   .card {
-    background-color: #469ea8;
+    background-color: #f8f8f8;
   }
   
   .card-primary {
@@ -147,12 +153,14 @@ body{
     margin-right: 1rem;
   }
   
-  .badge-default, .btn-outline-light {
-    background-color: #469ea8 !important;
-    border-color: #f7f7f7 !important;
-    margin: -16px 2px 4px 1px !important;
-    border-radius: 4%;
-    color: white !important;
+  .badge-default, .btn-outline-danger, .btn-outline-secondary {
+    /* background-color: #373e3f !important;
+    border-color: #060606 !important; */
+    margin: -3px 7px 14px -4px !important;
+    border-radius: 5%;
+    height: 38px;
+    width: 92px;
+    /* color: #ecdfdf !important; */
   }
   
   h4 a, h4 a:hover {
@@ -176,4 +184,17 @@ body{
   
   legend {
     font-family: 'Lobster', cursive;
+  }
+
+  .lead {
+    font-size: 1.10rem;
+  }
+
+  .entry{
+    position: absolute;
+  right: 150px;
+  width: 200px;
+  height: 120px;
+  border: 3px solid green;
+
   }
