@@ -20,3 +20,4 @@ mongoose.connection.on('disconnected', () => {
 });
 
 require('./locations');
+require('./users');

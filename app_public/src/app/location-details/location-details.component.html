@@ -8,7 +8,7 @@
                 <i class="{{ location.rating < 5 ? 'far' : 'fas' }} fa-star"></i>
         </small>
         <div class="facilities">
-            <span *ngFor="let facility of location.facilities" class="badge badge-warning">{{facility}}</span>
+            <span *ngFor="let facility of location?.facilities" class="badge badge-warning">{{facility}}</span>
         </div>        
     </div>
 </div>

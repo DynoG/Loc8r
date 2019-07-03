@@ -5,35 +5,39 @@
                 <button (click)="formVisible=true" class="btn btn-primary float-right">New</button>
                 <button type="button" (click)="formVisible=false" class="btn btn-default float-right">Discard</button>
         </div>
+        <div *ngIf="formError" class="alert alert-danger" role="alert">
+                {{ formError }}
+        </div>
 </div>
+
 <div class="row" *ngIf="formVisible">
     <!-- *ngIf="locations" to Div and  [(ngModel)]="locations.name" to each Input-->
         <div class="col-8">
-            <form action="">
+            <form (ngSubmit)="onSubmit()">
                     <div class="form-group row">
                         <label for="name" class="col-sm-2 col-form-label">Name</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="name" [(ngModel)]="newlocation.address" placeholder="Location name">
+                            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="newlocation.name" placeholder="Location name">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="address" class="col-sm-2 col-form-label">Address</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="address" [(ngModel)]="newlocation.address" placeholder="Location address">
+                            <input type="text" class="form-control" id="address" name="address" [(ngModel)]="newlocation.address" placeholder="Location address">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="Facilities" class="col-sm-2 col-form-label">Facilities</label>
                         <div class="col-sm-10">
-                            <textarea class="form-control" id="Facilities" rows="3" [(ngModel)]="newlocations.facilities"></textarea>
+                            <textarea class="form-control" id="Facilities" name="facilities" rows="3" [(ngModel)]="newlocation.facilities"></textarea>
                         </div>
                     </div>
                     <div class="form-group row">
                             <label for="rating" class="col-sm-2 col-form-label">Rating</label>
                             <div class="col-sm-10">
-                                    <select class="form-control" id="rating" [(ngModel)]="newlocations.rating">
+                                    <select class="form-control" id="rating" name="rating" [(ngModel)]="newlocation.rating">
                                             <!-- [ngValue]="1" to add for each option -->
-                                            <option >1</option>
+                                            <option [ngValue]="1">1</option>
                                             <option [ngValue]="2">2</option>
                                             <option [ngValue]="3">3</option>
                                             <option [ngValue]="4">4</option>
@@ -43,9 +47,11 @@
                             
                     </div>
                     <button type="submit" class="btn btn-outline-danger">Submit</button>
-                    <button type="button" class="btn btn-outline-secondary">Cancel</button>
+                    <button type="button" (click)="formError=false" class="btn btn-outline-secondary">Cancel</button>
             </form>
-
+            
         </div>
-        <div class="col-2"> ... </div>
+        <div class="col-2">
+                ...
+        </div>
 </div>
