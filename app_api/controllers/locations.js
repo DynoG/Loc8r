@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const mod = mongoose.model('Locations');
+const user = mongoose.model('User');
 mongoose.set('useFindAndModify', false);
 
 
@@ -14,28 +15,31 @@ const AllLoctions = (req, res) =>{
 
 }
 const CreateLocation = (req, res) =>{
-
-    mod
+    // Check email existance in req body
+    // use email to fetch user
+    if (!req.payoad.hash) {
+        res.status(400).json({"message":"Unauthorized route"});
+    } else {
+        mod
         .create({
             name:req.body.name,
             address:req.body.address,
             facilities:req.body.facilities,
-            // review:req.body.review
-        }, (err, location) => {
-                if (err) {
-                    res
-                        .status(400)
-                        .json(err);
-                } else {
-                    res
-                        .status(201)
-                        .json(location);
+            //  TODO : reviews for each location (subdocuments)
+    }, (err, location) => {
+            if (err) {
+                res.status(400).json(err);
+
+            } else {
+                res.status(201).json(location);
+
                 }
 
-            })    
-}
+        });    
+}}
 // Controller function {OneLocation} Find location By Id ...
 const OneLocation = (req, res) =>{
+
     mod
         .findById(req.params.locationid)
         .exec((err, location) =>{

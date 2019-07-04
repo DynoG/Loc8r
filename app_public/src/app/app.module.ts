@@ -15,6 +15,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { LocationDetailsComponent } from './location-details/location-details.component';
 import { DetailsPageComponent } from './details-page/details-page.component';
 import { NewlocationComponent } from './newlocation/newlocation.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { NewlocationComponent } from './newlocation/newlocation.component';
     SidebarComponent,
     LocationDetailsComponent,
     DetailsPageComponent,
-    NewlocationComponent
+    NewlocationComponent,
+    RegisterComponent
 
   ],
   imports: [
@@ -53,6 +55,10 @@ import { NewlocationComponent } from './newlocation/newlocation.component';
       {
         path: 'location',
         component: NewlocationComponent
+      },
+      {
+        path: 'register',
+        component: RegisterComponent
       }
     ])
   ],

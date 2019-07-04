@@ -12,7 +12,7 @@ export class Loc8rDataService {
   private apiBaseUrl = 'http://localhost:3000/api';
 
   // Data Providers (Controllers) 
-  //  Get All Locations
+  //  Get Request All Locations
   public getLocations(): Promise<Locations[]> {
 
     const url: string = `${this.apiBaseUrl}/locations`;
@@ -23,7 +23,7 @@ export class Loc8rDataService {
       .catch(this.ErrHandler);
   }
 
-  // Get Location Details
+  // Get Request Location Details
   public getLocationById(locationId:String): Promise<Locations> {
     const url: string = `${this.apiBaseUrl}/locations/${locationId}`;
     return this.http
@@ -33,7 +33,7 @@ export class Loc8rDataService {
     .catch(this.ErrHandler);
 
   }
-// Post New Location to Express API
+// Post Request New Location to Express API
   public AddLocation(FormData:any):Promise<any> {
     const url: string = `${this.apiBaseUrl}/locations/`;
     return this.http

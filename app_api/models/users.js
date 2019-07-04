@@ -4,11 +4,11 @@ const jwt = require('jsonwebtoken');
 
 const userSchema = new mongoose.Schema({
 
-    username:{
+    name:{
         type: String,
-        required: [true, 'Username is required'],
+        required: [true, 'name is required'],
         validate:{
-            validator: (username) => username.length > 4,
+            validator: (name) => name.length > 4,
             message: 'Must be longer 4 characters'
         }
     },
@@ -38,14 +38,14 @@ userSchema.methods.validatePwd = function(password) {
 };
 
 userSchema.methods.genJWT = function() {
-    const exp = new Date();
-    exp.setDate(exp.getDate() + 7);
+    const expiry = new Date();
+    expiry.setDate(expiry.getDate() + 7);
     return jwt.sign({
         _id: this._id,
         email: this.email,
-        username:this.username,
-        exp: parseInt(exp.getTime() / 1000, 10),
-    }, 'thisIsSecret');
+        name:this.name,
+        exp: parseInt(expiry.getTime() / 1000, 10),
+    }, 'secretword');
     };
 
 mongoose.model('User', userSchema); 
